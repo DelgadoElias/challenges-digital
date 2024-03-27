@@ -1,0 +1,123 @@
+/* 1. Definir las fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@font-face {
+    font-family: 'Hanken';
+    src: url('./assets/fonts/static/HankenGrotesk-Bold.ttf') format('ttf'),
+         url('./assets/fonts/static/HankenGrotesk-ExtraBold.ttf') format('ttf'),
+         url('./assets/fonts/static/HankenGrotesk-Medium.ttf') format('ttf'),
+         url('./assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('ttf');
+}
+
+/* Utilizacion de la fuente */
+* {
+    font-family: 'Rubik', sans-serif;
+
+    /* Variables */
+    --color-primary-red: hsl(0, 100%, 67%);
+    --color-primary-yellow: hsl(39, 100%, 56%);
+    --color-primary-teal: hsl(166, 100%, 37%);
+    --color-primary-blue: hsl(234, 85%, 45%);
+
+    --color-gradient-lightslateblue: hsl(252, 100%, 67%);
+    --color-gradient-lightroyalblue: hsl(241, 81%, 54%);
+    --color-gradient-violetblue: hsla(256, 72%, 46%, 1);
+
+    --color-gradient-persianblue: hsla(241, 72%, 46%, 0);
+
+    --color-neutral-white: hsl(0, 0%, 100%);
+    --color-neutral-paleblue: hsl(221, 100%, 96%);
+    --color-neutral-lavender: hsl(241, 100%, 89%);
+    --color-neutral-darkgrayblue: hsl(224, 30%, 27%);
+
+    font-size: 18px;
+
+    /*
+        Estandarizacion de propiedades
+    */
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+.gradiente-contenedor {
+    background: linear-gradient(to bottom, var(--color-gradient-lightslateblue), var(--color-gradient-lightroyalblue));
+}
+
+.top-header {
+    color: var(--color-neutral-white);
+    padding: 20px;
+    border-radius: 0 0 40px 40px;
+    text-align: center;
+}
+
+section div.top-header h4#resultado {
+    font-size: 17px;
+    opacity: 0.5;
+    padding-top: 20px;
+    font-weight: 500;
+}
+
+div#moneda {
+    background: linear-gradient(to bottom, var(--color-gradient-violetblue), var(--color-gradient-persianblue));
+    width: 180px;
+    height: 180px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div#moneda h2 {
+    font-size: 60px;
+    font-weight: 500;
+
+}
+
+div#moneda h5 {
+    font-size: 19px;
+    opacity: 0.5;
+    font-weight: 500;
+
+}
+
+div.top-header h3 {
+    font-size: 30px;
+    padding-top: 30px;
+    font-weight: 500;
+}
+
+div.top-header p {
+    width: 80%;
+    margin: auto;
+    font-size: 16px;
+    opacity: 0.6;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+/*
+    Si la pantalla es menor a 700px, NO USES ESTOS ESTILOS
+    Si la pantalla es mayor a 700px USALOS
+*/
+
+@media screen and (min-width: 700px) {
+    .top-header {
+        /*
+            Esta clase NO REEMPLAZA LA ANTERIOR, SOBREESCRIBE LA ANTERIOR
+        */
+
+        width: 30%;
+        border-radius: 30px;
+
+        /* Propiedades de centrado de pantalla */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
