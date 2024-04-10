@@ -1,6 +1,8 @@
 /* 1. Definir las fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+/*
 @font-face {
     font-family: 'Hanken';
     src: url('./assets/fonts/static/HankenGrotesk-Bold.ttf') format('ttf'),
@@ -8,10 +10,12 @@
          url('./assets/fonts/static/HankenGrotesk-Medium.ttf') format('ttf'),
          url('./assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('ttf');
 }
+*/
+
 
 /* Utilizacion de la fuente */
 * {
-    font-family: 'Rubik', sans-serif;
+    font-family: "Hanken Grotesk", sans-serif;
 
     /* Variables */
     --color-primary-red: hsl(0, 100%, 67%);
@@ -100,6 +104,71 @@ div.top-header p {
     padding-bottom: 20px;
 }
 
+#summary-title {
+    padding: 20px 30px;
+    opacity: 0.7;
+}
+
+.contenedor-lista {
+    list-style: none;
+    display: grid;
+    gap: 15px;
+}
+
+.contenedor-item {
+    display: grid;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    grid-template-columns: 30px 1fr 25px auto; /* 1fr --> 1 recuadro de grilla*/
+}
+
+.contenedor-item strong {
+    opacity: 0.9;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.contenedor-item span {
+    opacity: 0.6;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.contenedor-item.reaction {
+    background-color: #fff6f5;
+    color: var(--color-primary-red);
+}
+
+.contenedor-item.memory {
+    background-color: #fefaf1;
+    color: var(--color-primary-yellow);
+}
+
+.contenedor-item.verbal {
+    background-color: #f1f9f9;
+    color: var(--color-primary-teal);
+}
+
+.contenedor-item.visual {
+    background-color: #f2f2fc;
+    color: var(--color-primary-blue);
+}
+
+#submit-button {
+    background-color: #303b59;
+    border-radius: 30px;
+    color: var(--color-neutral-white);
+    width: 91%;
+    margin-left: 19px;
+    margin-top: 13px;
+
+    padding: 12px;
+}
+
 /*
     Si la pantalla es menor a 700px, NO USES ESTOS ESTILOS
     Si la pantalla es mayor a 700px USALOS
@@ -110,14 +179,24 @@ div.top-header p {
         /*
             Esta clase NO REEMPLAZA LA ANTERIOR, SOBREESCRIBE LA ANTERIOR
         */
-
-        width: 30%;
         border-radius: 30px;
+    }
 
+    .contenedor-final {
         /* Propiedades de centrado de pantalla */
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        border-radius: 30px;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    }
+
+    #summary-title {
+        font-size: 1.5rem;
     }
 }
