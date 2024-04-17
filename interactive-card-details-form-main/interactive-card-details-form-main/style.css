@@ -1,0 +1,121 @@
+*{
+    font-family: "Space Grotesk", sans-serif;
+
+    /*
+    Normalizacion de margenes y paddings
+    */
+
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+
+    /* Caja de variables */
+    --color-active-input-border: linear-gradient(90deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    --color-input-errors: hsl(0, 100%, 66%);
+
+    --color-white: hsl(0, 0%, 100%);
+    --color-light-grayish-violet: hsl(270, 3%, 87%);
+    --color-dark-grayish-violet: hsl(279, 6%, 55%);
+    --color-verydark-grayish-violet: hsl(278, 68%, 11%);
+
+    --fuente-size-tarjeta-medio: 0.7rem;
+} 
+
+body {
+    font-size: 18px;
+}
+
+#section-tarjetas {
+    padding: 15px;
+    padding-top: 30px;
+    /* TODOS LOS ABSOLUTOS DENTRO DE ESTE ELEMENTO
+    VAN A RESPONDER HACIA ESTA POSITION Y NO HACIA EL BODY */
+    position: relative; /* cuando no lo movemos, es un static pero con propiedades relativas */
+
+    display: flex;
+    flex-direction: column;
+}
+
+#section-tarjetas img.fondo {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#card-back {
+    right: 20px;
+    /* background-image: url(../interactive-card-details-form-main/images/bg-card-back.png); */
+    /* background-repeat: no-repeat; --> Sirve para background-image */
+    /* object-fit: contain;  --> Sirve para elementos IMG*/
+    align-self: flex-end;
+    width: fit-content;
+}
+
+#card-front {
+    width: fit-content;
+    transform: translate(10px, -75px);
+}
+
+img.imagen-tarjeta{
+    max-width: 300px;
+}
+
+img.tarjeta-frente-logo {
+    z-index: 10;
+    width: 70px;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+}
+
+.card-container {
+    position: relative;
+}
+
+/* Regla generalizada */
+.card-container h5, .card-container h4 {
+    position: absolute;
+    color: var(--color-light-grayish-violet);
+    font-weight: 400;
+}
+
+/* Regla especifica*/
+.card-container h5.numero-dorso-tarjeta {
+    top: 42%;
+    right: 40px;
+    color: var(--color-white);
+}
+
+/* Regla especifica*/
+.tarjeta-frente-numero {
+    bottom: 30%;
+    text-align: center;
+    width: 100%;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+}
+
+.tarjeta-frente-medio {
+    font-size: var(--fuente-size-tarjeta-medio);
+    bottom: 15%;
+}
+#tarjeta-frente-vencimiento {
+    right: 20px;
+}
+#tarjeta-frente-nombre {
+    left: 18px;
+}
+
+/**
+
+ ALTERNATIVAS A POSITION EN CIERTOS
+ UN BUEN O EXCELENTE USO DE FLEX Y GRID
+ + 
+ transform: translate rotate
+
+**/
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
